@@ -7,7 +7,7 @@ import numpy as np
 # Function to download large model from Hugging Face
 @st.cache_data
 def download_model():
-    url = "https://huggingface.co/karmanizafar/sentiments/blob/main/voting_model.pkl"
+    url = "https://huggingface.co/karmanizafar/sentiments/resolve/main/voting_model.pkl"
     filename = "voting_model.pkl"
     if not os.path.exists(filename):
         with st.spinner("Downloading model..."):
