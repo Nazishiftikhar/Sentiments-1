@@ -70,14 +70,47 @@ if not os.path.exists("tfidf_vectorizer.pkl"):
 vectorizer = joblib.load("tfidf_vectorizer.pkl")
 
 # ----------------- Top Navigation Menu -------------------
-selected = option_menu(
-    menu_title=None,  # No title
-    options=["Home", "Sentiment Analysis", "About"],
-    icons=["house", "emoji-smile", "info-circle"],
-    menu_icon="cast",
-    default_index=0,
-    orientation="vertical"
-)
+import streamlit as st
+from streamlit_option_menu import option_menu
+
+# Inject custom CSS for better sidebar nav style
+st.markdown("""
+    <style>
+    .css-1d391kg {
+        padding-top: 1rem;
+    }
+    .nav-link {
+        font-size: 17px;
+        font-weight: 600;
+        color: #333 !important;
+        transition: 0.2s ease-in-out;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        padding: 10px 18px !important;
+    }
+    .nav-link:hover {
+        background-color: #eeeeee;
+        color: black !important;
+        transform: translateX(3px);
+    }
+    .nav-link.active {
+        background-color: #6c63ff !important;
+        color: white !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Sidebar navigation
+with st.sidebar:
+    selected = option_menu(
+        menu_title="Navigation",  # Sidebar title
+        options=["Home", "Sentiment Analysis", "About"],
+        icons=["house", "emoji-smile", "info-circle"],
+        menu_icon="cast",
+        default_index=0,
+        orientation="vertical"
+    )
+
 
 # ----------------- Home Page -------------------
 if selected == "Home":
