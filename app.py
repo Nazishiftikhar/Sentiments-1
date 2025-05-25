@@ -109,7 +109,7 @@ elif selected == "Sentiment Analysis":
 elif selected == "About":
     st.title("ℹ️ About This App")
     st.markdown("""
-    st.write("""
+
     This web application analyzes the **sentiment** of user-provided text.
 
     - 🧠 Trained with real-world data
