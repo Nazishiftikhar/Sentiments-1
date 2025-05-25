@@ -84,15 +84,7 @@ selected = option_menu(
 # ----------------- Home Page -------------------
 if selected == "Home":
     st.title("🏠 Welcome to the Suicidal Thought Detection System")
-    st.write("""
-    This web application analyzes the **sentiment** of user-provided text using a machine learning model.
-
-    - 🧠 Trained with real-world data
-    - 🛡️ Sends email alerts if **suicidal intent** is detected
-    - 🚀 Simple and fast sentiment classification
-
-    👉 Navigate to the **Sentiment Analysis** tab above to begin.
-    """)
+    
 
 # ----------------- Sentiment Analysis Page -------------------
 elif selected == "Sentiment Analysis":
