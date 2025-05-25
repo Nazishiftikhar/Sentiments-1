@@ -76,7 +76,7 @@ selected = option_menu(
     icons=["house", "emoji-smile", "info-circle"],
     menu_icon="cast",
     default_index=0,
-    orientation="vertical"
+    orientation="horizontal"
 )
 # ----------------- Home Page -------------------
 if selected == "Home":
