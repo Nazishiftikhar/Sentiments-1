@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 import joblib
 import os
 import requests
@@ -53,28 +54,32 @@ if not os.path.exists("tfidf_vectorizer.pkl"):
     st.stop()
 vectorizer = joblib.load("tfidf_vectorizer.pkl")
 
-# ----------------- Top Menu -------------------
-st.markdown("<h1 style='text-align: center;'>AI Sentiment Detection App</h1>", unsafe_allow_html=True)
-menu = st.selectbox("📂 Select Page", ["Home", "Sentiment Analysis", "About"], index=0)
+# ----------------- Top Navigation Menu -------------------
+selected = option_menu(
+    menu_title=None,  # No title
+    options=["Home", "Sentiment Analysis", "About"],
+    icons=["house", "emoji-smile", "info-circle"],
+    menu_icon="cast",
+    default_index=0,
+    orientation="horizontal"
+)
 
 # ----------------- Home Page -------------------
-if menu == "Home":
-    st.subheader("🏠 Welcome to the Sentiment Detection System")
+if selected == "Home":
+    st.title("🏠 Welcome to the AI Sentiment Detection System")
     st.write("""
-    This web application helps analyze the **sentiment** of a given piece of text using a trained ensemble model.
+    This web application analyzes the **sentiment** of user-provided text using a machine learning model.
 
-    - 🧠 Built with machine learning
-    - 🚨 Sends alerts on detecting **suicidal intent**
-    - 📊 Accurate predictions based on TF-IDF & Voting Classifier
-    
-    🔍 Click below to start analyzing sentiments!
+    - 🧠 Trained with real-world data
+    - 🛡️ Sends email alerts if **suicidal intent** is detected
+    - 🚀 Simple and fast sentiment classification
+
+    👉 Navigate to the **Sentiment Analysis** tab above to begin.
     """)
-    if st.button("Go to Sentiment Analyzer"):
-        st.experimental_set_query_params(menu="Sentiment Analysis")
 
 # ----------------- Sentiment Analysis Page -------------------
-elif menu == "Sentiment Analysis":
-    st.subheader("🧠 Sentiment Analysis Tool")
+elif selected == "Sentiment Analysis":
+    st.title("🧠 Sentiment Analysis Tool")
     text_input = st.text_area("Enter text to analyze sentiment:")
 
     if st.button("Predict"):
@@ -92,22 +97,16 @@ elif menu == "Sentiment Analysis":
                     body=f"The following message indicates suicidal intent:\n\n{text_input}",
                     to_emails=["example1@example.com", "example2@example.com"]
                 )
-    if st.button("Back to Home"):
-        st.experimental_set_query_params(menu="Home")
 
 # ----------------- About Page -------------------
-elif menu == "About":
-    st.subheader("ℹ️ About This App")
-    st.write("""
-    This app performs sentiment classification using a **Voting Classifier** trained on labeled text data.
-    
-    It uses **TF-IDF vectorization** and alerts authorities if the predicted sentiment is 'suicide'.
+elif selected == "About":
+    st.title("ℹ️ About This App")
+    st.markdown("""
+    This app uses a **Voting Classifier** with **TF-IDF** text features to analyze user-submitted text and predict its sentiment.
 
-    **Developed by**: Nazish 
-    **Model hosted on**: [Hugging Face](https://huggingface.co/karmanizafar/sentiments)
+    When **'suicide'** sentiment is detected, an email alert is sent to the responsible parties.
 
-    ---
-    📧 For questions or support, please contact: `karmanizafar@gmail.com`
+    **Developer**: Muhammad Zafar Karmani  
+    **Model Hosted On**: [Hugging Face](https://huggingface.co/karmanizafar/sentiments)  
+    📫 Contact: `karmanizafar@gmail.com`
     """)
-    if st.button("Go to Sentiment Analyzer"):
-        st.experimental_set_query_params(menu="Sentiment Analysis")
