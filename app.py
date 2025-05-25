@@ -25,8 +25,8 @@ def download_model():
 # ----------------- Email Function -------------------
 def send_email_alert(subject, body, to_emails):
     try:
-        sender_email = st.secrets["EMAIL_ADDRESS"]
-        sender_password = st.secrets["EMAIL_PASSWORD"]
+        sender_email = st.secrets["karmanizafar6@gmail.com"]
+        sender_password = st.secrets["kArAmAt6!@#"]
     except Exception:
         st.error("Email credentials not found. Set EMAIL_ADDRESS and EMAIL_PASSWORD in Streamlit secrets.")
         return
