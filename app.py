@@ -13,7 +13,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://i.postimg.cc/CMzQb0Lh/20211217-205849-stop-suicide-png.jpg");
+        background-image: url("https://i.postimg.cc/nzGyXGHX/tan-tiles-black-capital-letters-spelling-suicide-set-background-small-tan-tiles-image-has-copy-space.webp");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
