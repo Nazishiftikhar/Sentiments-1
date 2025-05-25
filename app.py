@@ -81,12 +81,12 @@ selected = option_menu(
 
 # ----------------- Home Page -------------------
 if selected == "Home":
-    st.title("🏠 Welcome to the Suicidal Thought Detection")
+    st.title("🏠 Welcome to the Suicidal Thought Detection System")
     
 
 # ----------------- Sentiment Analysis Page -------------------
 elif selected == "Sentiment Analysis":
-    st.title("🧠 Suicidal Ideation Detection System")
+    st.title("🧠 Suicidal Ideation Detection")
     text_input = st.text_area("Enter text to analyze sentiment:")
 
     if st.button("Predict"):
