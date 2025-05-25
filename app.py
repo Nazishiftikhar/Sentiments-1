@@ -102,7 +102,7 @@ elif selected == "Sentiment Analysis":
                 send_email_alert(
                     subject="🚨 Suicide Sentiment Detected",
                     body=f"The following message indicates suicidal intent:\n\n{text_input}",
-                    to_emails=["nazi"]
+                    to_emails=["nazishiftikhar112@gmail.com"]
                 )
 
 # ----------------- About Page -------------------
