@@ -9,6 +9,51 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import streamlit as st
 from streamlit_option_menu import option_menu
+st.markdown("""
+    <style>
+    /* Sticky navbar */
+    #main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 9999;
+        transition: top 0.3s;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .nav-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 0;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    </style>
+
+    <div id="main-nav">
+        <div class="nav-content">
+            <a href="#Home" style="margin: 0 20px;">🏠 Home</a>
+            <a href="#SentimentAnalysis" style="margin: 0 20px;">😊 Sentiment Analysis</a>
+            <a href="#About" style="margin: 0 20px;">ℹ️ About</a>
+        </div>
+    </div>
+
+    <script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      var nav = document.getElementById("main-nav");
+      if (prevScrollpos > currentScrollPos) {
+        nav.style.top = "0";
+      } else {
+        nav.style.top = "-80px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+    </script>
+""", unsafe_allow_html=True)
 
 
 # ----------------- Download model -------------------
