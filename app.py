@@ -10,48 +10,19 @@ from email.mime.multipart import MIMEMultipart
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# ----------------- Custom Styling -------------------
-st.markdown("""
+st.markdown(
+    """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-    html, body, [class*="css"] {
-        font-family: 'Poppins', sans-serif;
-    }
-
     .stApp {
         background-image: url("https://i.postimg.cc/CMzQb0Lh/20211217-205849-stop-suicide-png.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
-
-    .main-container {
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 2rem;
-        border-radius: 12px;
-        margin-top: 2rem;
-        color: white;
-        text-align: center;
-        animation: fadeIn 1.2s ease-in;
-    }
-
-    .title-text {
-        font-size: 36px;
-        font-weight: 600;
-        margin-bottom: 1rem;
-    }
-
-    .custom-text {
-        font-size: 20px;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
     </style>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 # ----------------- Download model -------------------
 @st.cache_data
 def download_model():
@@ -116,11 +87,14 @@ if selected == "Home":
     st.markdown('</div>', unsafe_allow_html=True)
 
 
+# ----------------- Home Page -------------------
+if selected == "Home":
+    st.title("🏠 Welcome to the Suicidal Thought Detection System")
+    
+
 # ----------------- Sentiment Analysis Page -------------------
 elif selected == "Sentiment Analysis":
-    st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    st.markdown('<div class="title-text">🧠 Sentiment Analysis</div>', unsafe_allow_html=True)
-
+    st.title("🧠 Sentiment Analysis")
     text_input = st.text_area("Enter text to analyze sentiment:")
 
     if st.button("Predict"):
@@ -138,19 +112,16 @@ elif selected == "Sentiment Analysis":
                     body=f"The following message indicates suicidal intent:\n\n{text_input}",
                     to_emails=["codernazish91@gmail.com", "codernazish91@gmail.com"]
                 )
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # ----------------- About Page -------------------
 elif selected == "About":
-    st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    st.markdown('<div class="title-text">ℹ️ About This App</div>', unsafe_allow_html=True)
+    st.title("ℹ️ About This App")
     st.markdown("""
-        <div class="custom-text">
-        This app uses a <strong>Voting Classifier</strong> with <strong>TF-IDF</strong> to analyze text and detect suicidal thoughts.<br><br>
-        When suicide sentiment is detected, an alert email is automatically sent to responsible parties.<br><br>
-        <strong>Developer:</strong> Nazish<br>
-        <strong>Model Hosted On:</strong> <a href="https://huggingface.co/naziiiii/Sentiments/blob/main/voting_model.pkl" style="color: #00ffff;">Hugging Face</a><br>
-        📫 <strong>Contact:</strong> nazivirk@gmail.com
-        </div>
-    """, unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+    This app uses a **Voting Classifier** with **TF-IDF** text features to analyze user-submitted text and predict its sentiment.
+
+    When **'suicide'** sentiment is detected, an email alert is sent to the responsible parties.
+
+    **Developer**: Nazish  
+    **Model Hosted On**: [Hugging Face](https://huggingface.co/naziiiii/Sentiments/blob/main/voting_model.pkl)  
+    📫 Contact: `nazivirk@gmail.com`
+    """)
