@@ -80,7 +80,41 @@ selected = option_menu(
 )
 # ----------------- Home Page -------------------
 if selected == "Home":
-    st.title("🏠 Welcome to the Suicidal Thought Detection System")
+    # Main title with style
+    st.markdown("""
+        <h1 style='text-align: center; color: #6c63ff; font-size: 40px;'>
+            🏠 Welcome to the Suicidal Thought Detection System
+        </h1>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+        <p style='text-align: center; font-size: 18px; color: #555;'>
+            Your mental health matters. This AI-powered system analyzes your text to detect early signs of suicidal thoughts and provide timely alerts.
+        </p>
+        <br>
+    """, unsafe_allow_html=True)
+
+    # Use two columns for layout
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.subheader("💡 How It Works")
+        st.markdown("""
+        - 🧠 Uses a trained NLP model with real-world data  
+        - 🚨 Sends email alerts when high-risk content is detected  
+        - 🤖 Fast, simple & secure  
+        - 🔍 Analyze thoughts in real-time  
+        """)
+        st.markdown("")
+
+        # Optional button to move to next section
+        if st.button("🚀 Start Analyzing"):
+            st.experimental_set_query_params(tab="Sentiment Analysis")  # optional if you're using query params
+
+    with col2:
+        # You can add an image or animation here
+        st.image("https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif", caption="Stay strong. You're not alone.", use_column_width=True)
+
     
 
 # ----------------- Sentiment Analysis Page -------------------
