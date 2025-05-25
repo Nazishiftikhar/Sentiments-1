@@ -106,7 +106,7 @@ elif selected == "About":
 
     When **'suicide'** sentiment is detected, an email alert is sent to the responsible parties.
 
-    **Developer**: Muhammad Zafar Karmani  
+    **Developer**: Nazish  
     **Model Hosted On**: [Hugging Face](https://huggingface.co/karmanizafar/sentiments)  
     📫 Contact: `karmanizafar@gmail.com`
     """)
