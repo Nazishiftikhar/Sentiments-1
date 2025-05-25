@@ -9,52 +9,19 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import streamlit as st
 from streamlit_option_menu import option_menu
-st.markdown("""
+st.markdown(
+    """
     <style>
-    /* Sticky navbar */
-    #main-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        z-index: 9999;
-        transition: top 0.3s;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    .nav-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 12px 0;
-        font-weight: bold;
-        font-size: 18px;
+    .stApp {
+        background-image: url("https://i.postimg.cc/CMzQb0Lh/20211217-205849-stop-suicide-png.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
     </style>
-
-    <div id="main-nav">
-        <div class="nav-content">
-            <a href="#Home" style="margin: 0 20px;">🏠 Home</a>
-            <a href="#SentimentAnalysis" style="margin: 0 20px;">😊 Sentiment Analysis</a>
-            <a href="#About" style="margin: 0 20px;">ℹ️ About</a>
-        </div>
-    </div>
-
-    <script>
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-      var currentScrollPos = window.pageYOffset;
-      var nav = document.getElementById("main-nav");
-      if (prevScrollpos > currentScrollPos) {
-        nav.style.top = "0";
-      } else {
-        nav.style.top = "-80px";
-      }
-      prevScrollpos = currentScrollPos;
-    }
-    </script>
-""", unsafe_allow_html=True)
-
+    """,
+    unsafe_allow_html=True
+)
 
 # ----------------- Download model -------------------
 @st.cache_data
@@ -114,14 +81,6 @@ selected = option_menu(
 
 # ----------------- Home Page -------------------
 if selected == "Home":
-    st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    st.markdown('<div class="title-text">🏠 Welcome to the Suicidal Thought Detection System</div>', unsafe_allow_html=True)
-    st.markdown('<div class="custom-text">This app detects suicidal thoughts in user-written messages using advanced machine learning. If suicide risk is detected, a warning and email alert are triggered to support intervention and safety.</div>', unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-
-
-# ----------------- Home Page -------------------
-if selected == "Home":
     st.title("🏠 Welcome to the Suicidal Thought Detection System")
     
 
@@ -154,7 +113,7 @@ elif selected == "About":
 
     When **'suicide'** sentiment is detected, an email alert is sent to the responsible parties.
 
-    **Developer**: Nazish  
+    **Developer**: Nazish Iftikhar 
     **Model Hosted On**: [Hugging Face](https://huggingface.co/naziiiii/Sentiments/blob/main/voting_model.pkl)  
     📫 Contact: `nazivirk@gmail.com`
     """)
