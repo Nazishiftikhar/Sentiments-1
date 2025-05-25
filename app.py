@@ -15,7 +15,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://i.postimg.cc/hjVMZykj/nick-fewings-LQGQbss-Fs-M-unsplash-1024x683.jpg");
+        background-image: url("https://i.postimg.cc/6QfyHCHK/1000-F-187398873-i-ALx-F0q-ZYJ4-JPMyj9f3ig0-BMSYv-Ok-KXI.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
