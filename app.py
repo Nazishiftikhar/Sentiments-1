@@ -10,19 +10,7 @@ from email.mime.multipart import MIMEMultipart
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-image: url("https://i.postimg.cc/CMzQb0Lh/20211217-205849-stop-suicide-png.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 # ----------------- Download model -------------------
 @st.cache_data
 def download_model():
