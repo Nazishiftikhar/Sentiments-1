@@ -109,11 +109,16 @@ elif selected == "Sentiment Analysis":
 elif selected == "About":
     st.title("ℹ️ About This App")
     st.markdown("""
-    This app uses a **Voting Classifier** with **TF-IDF** text features to analyze user-submitted text and predict its sentiment.
+    st.write("""
+    This web application analyzes the **sentiment** of user-provided text.
 
-    When **'suicide'** sentiment is detected, an email alert is sent to the responsible parties.
+    - 🧠 Trained with real-world data
+    - 🛡️ Sends email alerts if **suicidal intent** is detected
+    - 🚀 Simple and fast sentiment classification
 
+    👉 Navigate to the **Sentiment Analysis** tab above to begin.
+    """)
     **Developer**: Nazish Iftikhar 
     **Model Hosted On**: [Hugging Face](https://huggingface.co/naziiiii/Sentiments/blob/main/voting_model.pkl)  
-    📫 Contact: `nazivirk@gmail.com`
+    📫 Contact: `nazivirk113@gmail.com`
     """)
