@@ -15,7 +15,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://www.alamy.com/methods-of-suicide-rope-slipknot-blades-pills-on-a-black-background-image366325815.html?imageid=E9E71E40-BFBC-483A-B0DF-9BB1F3A601ED&p=1139774&pn=18&searchId=259deef50469c3ce9007d1880c7c8ea7&searchtype=0");
+        background-image: url(""C:\Users\waqas\Downloads\download (1).jpg"");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
