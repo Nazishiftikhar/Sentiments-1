@@ -86,7 +86,7 @@ if selected == "Home":
 
 # ----------------- Sentiment Analysis Page -------------------
 elif selected == "Sentiment Analysis":
-    st.title("🧠 Suicidal Ideation Detection App")
+    st.title("🧠 Suicidal Ideation Detection System")
     text_input = st.text_area("Enter text to analyze sentiment:")
 
     if st.button("Predict"):
