@@ -11,19 +11,59 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 # Add background image from URL
-st.markdown(
-    """
+st.markdown("""
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    html, body, [class*="css"]  {
+        font-family: 'Poppins', sans-serif;
+    }
+
     .stApp {
         background-image: url("https://i.postimg.cc/CMzQb0Lh/20211217-205849-stop-suicide-png.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        position: relative;
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 2rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+    }
+
+    .title-text {
+        color: white;
+        font-size: 36px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .custom-text {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+        padding: 2rem;
+        color: white;
+        font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .fade-in {
+        animation: fadeIn 1.5s ease-in;
     }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
 
 # ----------------- Download model -------------------
 @st.cache_data
