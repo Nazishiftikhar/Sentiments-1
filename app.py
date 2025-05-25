@@ -10,12 +10,12 @@ from email.mime.multipart import MIMEMultipart
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# Add background image from URL
+# ----------------- Custom Styling -------------------
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
 
-    html, body, [class*="css"]  {
+    html, body, [class*="css"] {
         font-family: 'Poppins', sans-serif;
     }
 
@@ -24,47 +24,34 @@ st.markdown("""
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        position: relative;
     }
 
-    .overlay {
+    .main-container {
         background-color: rgba(0, 0, 0, 0.6);
         padding: 2rem;
-        border-radius: 10px;
+        border-radius: 12px;
         margin-top: 2rem;
+        color: white;
+        text-align: center;
+        animation: fadeIn 1.2s ease-in;
     }
 
     .title-text {
-        color: white;
         font-size: 36px;
-        text-align: center;
-        font-weight: bold;
+        font-weight: 600;
+        margin-bottom: 1rem;
     }
 
     .custom-text {
-        color: white;
         font-size: 20px;
-        text-align: center;
-    }
-
-    footer {
-        text-align: center;
-        padding: 2rem;
-        color: white;
-        font-size: 14px;
     }
 
     @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
     }
-
-    .fade-in {
-        animation: fadeIn 1.5s ease-in;
-    }
     </style>
 """, unsafe_allow_html=True)
-
 # ----------------- Download model -------------------
 @st.cache_data
 def download_model():
@@ -123,12 +110,17 @@ selected = option_menu(
 
 # ----------------- Home Page -------------------
 if selected == "Home":
-    st.title("🏠 Welcome to the Suicidal Thought Detection System")
-    
+    st.markdown('<div class="main-container">', unsafe_allow_html=True)
+    st.markdown('<div class="title-text">🏠 Welcome to the Suicidal Thought Detection System</div>', unsafe_allow_html=True)
+    st.markdown('<div class="custom-text">This app detects suicidal thoughts in user-written messages using advanced machine learning. If suicide risk is detected, a warning and email alert are triggered to support intervention and safety.</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+
 
 # ----------------- Sentiment Analysis Page -------------------
 elif selected == "Sentiment Analysis":
-    st.title("🧠 Sentiment Analysis")
+    st.markdown('<div class="main-container">', unsafe_allow_html=True)
+    st.markdown('<div class="title-text">🧠 Sentiment Analysis</div>', unsafe_allow_html=True)
+
     text_input = st.text_area("Enter text to analyze sentiment:")
 
     if st.button("Predict"):
@@ -146,16 +138,19 @@ elif selected == "Sentiment Analysis":
                     body=f"The following message indicates suicidal intent:\n\n{text_input}",
                     to_emails=["codernazish91@gmail.com", "codernazish91@gmail.com"]
                 )
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # ----------------- About Page -------------------
 elif selected == "About":
-    st.title("ℹ️ About This App")
+    st.markdown('<div class="main-container">', unsafe_allow_html=True)
+    st.markdown('<div class="title-text">ℹ️ About This App</div>', unsafe_allow_html=True)
     st.markdown("""
-    This app uses a **Voting Classifier** with **TF-IDF** text features to analyze user-submitted text and predict its sentiment.
-
-    When **'suicide'** sentiment is detected, an email alert is sent to the responsible parties.
-
-    **Developer**: Nazish  
-    **Model Hosted On**: [Hugging Face](https://huggingface.co/naziiiii/Sentiments/blob/main/voting_model.pkl)  
-    📫 Contact: `nazivirk@gmail.com`
-    """)
+        <div class="custom-text">
+        This app uses a <strong>Voting Classifier</strong> with <strong>TF-IDF</strong> to analyze text and detect suicidal thoughts.<br><br>
+        When suicide sentiment is detected, an alert email is automatically sent to responsible parties.<br><br>
+        <strong>Developer:</strong> Nazish<br>
+        <strong>Model Hosted On:</strong> <a href="https://huggingface.co/naziiiii/Sentiments/blob/main/voting_model.pkl" style="color: #00ffff;">Hugging Face</a><br>
+        📫 <strong>Contact:</strong> nazivirk@gmail.com
+        </div>
+    """, unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
