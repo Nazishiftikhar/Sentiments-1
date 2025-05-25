@@ -109,16 +109,16 @@ elif selected == "Sentiment Analysis":
 elif selected == "About":
     st.title("ℹ️ About This App")
     st.markdown("""
-
     This web application analyzes the **sentiment** of user-provided text.
 
-    - 🧠 Trained with real-world data
-    - 🛡️ Sends email alerts if **suicidal intent** is detected
-    - 🚀 Simple and fast sentiment classification
+    - 🧠 Trained with real-world data  
+    - 🛡️ Sends email alerts if **suicidal intent** is detected  
+    - 🚀 Simple and fast sentiment classification  
 
     👉 Navigate to the **Sentiment Analysis** tab above to begin.
-    """)
-    **Developer**: Nazish Iftikhar 
+
+    **Developer**: Nazish Iftikhar  
     **Model Hosted On**: [Hugging Face](https://huggingface.co/naziiiii/Sentiments/blob/main/voting_model.pkl)  
-    📫 Contact: `nazivirk113@gmail.com`
+    📫 **Contact**: `nazivirk113@gmail.com`
     """)
+
