@@ -13,7 +13,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://i.postimg.cc/g08JBQK1/suicide-rubber-stamp-illustration-071771333-iconl-nowm.webp");
+        background-image: url("");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
