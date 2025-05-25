@@ -83,7 +83,7 @@ selected = option_menu(
 
 # ----------------- Home Page -------------------
 if selected == "Home":
-    st.title("🏠 Welcome to the AI Sentiment Detection System")
+    st.title("🏠 Welcome to the Suicidal Thought Detection System")
     st.write("""
     This web application analyzes the **sentiment** of user-provided text using a machine learning model.
 
@@ -96,7 +96,7 @@ if selected == "Home":
 
 # ----------------- Sentiment Analysis Page -------------------
 elif selected == "Sentiment Analysis":
-    st.title("🧠 Sentiment Analysis Tool")
+    st.title("🧠 Sentiment Analysis")
     text_input = st.text_area("Enter text to analyze sentiment:")
 
     if st.button("Predict"):
