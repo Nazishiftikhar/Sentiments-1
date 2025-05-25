@@ -13,7 +13,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://i.postimg.cc/Qxwyxyp6/ab67616d00001e02b1c2876d696b543a9cca367a.jpg");
+        background-image: url("https://i.postimg.cc/7LxMx3Qs/stock-vector-one-continuous-line-drawing-of-suicide-awareness-month-with-white-background-awareness.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
