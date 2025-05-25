@@ -15,7 +15,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://i.postimg.cc/pXCctSp5/deccanherald-2024-04-fb1467b0-fe10-4589-a518-d51ac6e40adf-deccanherald-import-sites-dh-files-article.avif");
+        background-image: url("https://i.postimg.cc/hjVMZykj/nick-fewings-LQGQbss-Fs-M-unsplash-1024x683.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
