@@ -86,7 +86,7 @@ elif menu == "About":
     
     It can detect potentially dangerous sentiments like **suicide** and trigger alerts to specified contacts.
 
-    **Developed by:** Muhammad Zafar Karmani  
-    **Model hosted on:** [Hugging Face](https://huggingface.co/karmanizafar/sentiments)
+    **Developed by:** Nazish  
+    **Model hosted on:** [Hugging Face](https://huggingface.co/naziii/sentiments)
     """)
 
