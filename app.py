@@ -84,40 +84,46 @@ if selected == "Home":
 elif selected == "Sentiment Analysis":
     st.markdown("""
         <style>
-        .centered-box {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        .custom-box {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            width: 90%;
+            width: 85%;
             max-width: 700px;
-            margin: 50px auto;
+            margin: 40px auto;
             text-align: center;
         }
-        .centered-box h2 {
+        .custom-box h2 {
             font-family: 'Courier New', monospace;
-            font-size: 28px;
-            color: #1e1e1e;
+            font-size: 30px;
+            color: #2f2f2f;
             margin-bottom: 25px;
         }
         .stTextArea textarea {
             font-size: 18px !important;
             padding: 15px !important;
-            border-radius: 10px !important;
+            border-radius: 12px !important;
+            background-color: #f6f6f6 !important;
         }
-        .stButton>button {
-            background-color: #1e1e1e;
+        .stButton > button {
+            background-color: #2f2f2f;
             color: white;
+            font-weight: bold;
             border: none;
-            padding: 10px 24px;
+            padding: 10px 25px;
             border-radius: 8px;
             font-size: 16px;
-            margin-top: 15px;
+            margin-top: 20px;
+            transition: 0.3s ease;
+        }
+        .stButton > button:hover {
+            background-color: #444;
         }
         </style>
     """, unsafe_allow_html=True)
 
-    st.markdown('<div class="centered-box">', unsafe_allow_html=True)
+    st.markdown('<div class="custom-box">', unsafe_allow_html=True)
     st.markdown("<h2>🧠 ONLINE SENTIMENT ANALYSIS</h2>", unsafe_allow_html=True)
 
     text_input = st.text_area("Enter your text here...", height=150)
@@ -135,9 +141,8 @@ elif selected == "Sentiment Analysis":
                 send_email_alert(
                     subject="🚨 Suicide Sentiment Detected",
                     body=f"The following message indicates suicidal intent:\n\n{text_input}",
-                    to_emails=["codernazish91@gmail.com", "codernazish91@gmail.com"]
+                    to_emails=["codernazish91@gmail.com"]
                 )
-    
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ----------------- About Page -------------------
