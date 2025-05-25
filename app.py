@@ -15,7 +15,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("C:\Users\waqas\Downloads\download (1).jpg");
+        background-image: url("");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
