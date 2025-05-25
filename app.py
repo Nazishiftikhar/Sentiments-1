@@ -138,7 +138,7 @@ elif selected == "Sentiment Analysis":
             prediction = model.predict(X_input)[0]
             st.success(f"Predicted Sentiment: **{prediction}**")
 
-            if prediction.lower() == "suicide":
+            if prediction.lower() == "Suicidal":
                 st.error("⚠️ Suicide sentiment detected. Alert triggered.")
                 send_email_alert(
                     subject="🚨 Suicide Sentiment Detected",
