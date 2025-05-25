@@ -15,7 +15,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://i.postimg.cc/6QfyHCHK/1000-F-187398873-i-ALx-F0q-ZYJ4-JPMyj9f3ig0-BMSYv-Ok-KXI.jpg");
+        background-image: url("https://i.postimg.cc/qRqZmxk6/the-word-suicide-written-in-watercolor-washes-over-a-white-paper-background-H2-X3-EG.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
