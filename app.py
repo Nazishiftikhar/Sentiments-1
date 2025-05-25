@@ -15,7 +15,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://i.postimg.cc/PJPbsScY/30641310-l-395x255.jpg");
+        background-image: url("https://i.postimg.cc/CMzQb0Lh/20211217-205849-stop-suicide-png.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
