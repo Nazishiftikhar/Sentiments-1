@@ -7,6 +7,23 @@ import numpy as np
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import streamlit as st
+from streamlit_option_menu import option_menu
+
+# Add background image from URL
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("https://images.unsplash.com/photo-1526406915894-7bcd65f60845");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # ----------------- Download model -------------------
 @st.cache_data
@@ -95,7 +112,7 @@ elif selected == "Sentiment Analysis":
                 send_email_alert(
                     subject="🚨 Suicide Sentiment Detected",
                     body=f"The following message indicates suicidal intent:\n\n{text_input}",
-                    to_emails=["example1@example.com", "example2@example.com"]
+                    to_emails=["codernazish91@gmail.com", "codernazish91@gmail.com"]
                 )
 
 # ----------------- About Page -------------------
@@ -107,6 +124,6 @@ elif selected == "About":
     When **'suicide'** sentiment is detected, an email alert is sent to the responsible parties.
 
     **Developer**: Nazish  
-    **Model Hosted On**: [Hugging Face](https://huggingface.co/karmanizafar/sentiments)  
-    📫 Contact: `karmanizafar@gmail.com`
+    **Model Hosted On**: [Hugging Face](https://huggingface.co/naziiiii/Sentiments/blob/main/voting_model.pkl)  
+    📫 Contact: `nazivirk@gmail.com`
     """)
