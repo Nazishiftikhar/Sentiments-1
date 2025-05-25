@@ -81,7 +81,7 @@ selected = option_menu(
 
 # ----------------- Home Page -------------------
 if selected == "Home":
-    st.title("🏠 Welcome to the Suicidal Thought Detection System")
+    st.title("🏠 Welcome to the Suicidal Thought Detection")
     
 
 # ----------------- Sentiment Analysis Page -------------------
