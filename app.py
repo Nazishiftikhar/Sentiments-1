@@ -13,7 +13,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://i.postimg.cc/YqrWLrx0/sea-of-trees-tomasz-lazar-7.avif");
+        background-image: url("https://i.postimg.cc/fLMwqLy0/suicide-concept-retro-colorful-word-illustration-143980066-iconl-wide-nowm.webp");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
